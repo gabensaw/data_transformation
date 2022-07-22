@@ -58,3 +58,6 @@ clean_df['birth_date'] = clean_df['birth_day'].astype(str) + '-' + clean_df['bir
 clean_df['birth_date'] = pd.to_datetime(clean_df['birth_date'], format='%d-%m-%Y', errors='coerce')
 # remove columns: birth_day, birth_month, birth_year
 clean_df = clean_df.drop(columns=['birth_day', 'birth_month', 'birth_year'])
+
+# save clean dataframe to new csv file
+clean_df.to_csv('transformed_results.csv')
